@@ -44,7 +44,7 @@ namespace Assign2_ContactForm
             {
                 // Loop through the list and add the list to the listbox on the form
 
-                lboxContacts.Items.Add(txtFirstName.Text + " " + txtLastName.Text + "\r\n" + txtStreet1.Text + " " + txtStreet2.Text + " " + txtCity.Text + "(" + cmbState.SelectedItem.ToString() + ")" + ", " + txtZip.Text + "\n" + txtEmail.Text + "\r\n" + txtHomePhone.Text + ", " + txtWorkPhone.Text + ", " + txtCellPhone.Text + "\r\n" + "Birthday: " + dtpBirthday.Text + "\r\n" + "Anniversary: " + dtpAnniversary.Text + "\r\n" + chkCardWorthy.CheckState + "\r\n" + "Relationship: " + cmbRelationship.SelectedItem.ToString() + "\r\n\r\n");
+                lboxContacts.Items.Add(txtFirstName.Text + " " + txtLastName.Text + "(" + cmbState.SelectedItem.ToString() + ")");
 
                 DateTime dtBDay = new DateTime();
                 // dtBDay = Convert.ToDateTime(dtpBirthday.Text);
