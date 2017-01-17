@@ -1,0 +1,21 @@
+C:\Users\001405200\Desktop\Week1_Calculator\Week1_Calculator\bin\Debug\Week1_Calculator.exe.config
+C:\Users\001405200\Desktop\Week1_Calculator\Week1_Calculator\bin\Debug\Week1_Calculator.exe
+C:\Users\001405200\Desktop\Week1_Calculator\Week1_Calculator\bin\Debug\Week1_Calculator.pdb
+C:\Users\001405200\Desktop\Week1_Calculator\Week1_Calculator\obj\Debug\Week1_Calculator.csprojResolveAssemblyReference.cache
+C:\Users\001405200\Desktop\Week1_Calculator\Week1_Calculator\obj\Debug\Week1_Calculator.Form1.resources
+C:\Users\001405200\Desktop\Week1_Calculator\Week1_Calculator\obj\Debug\Week1_Calculator.Properties.Resources.resources
+C:\Users\001405200\Desktop\Week1_Calculator\Week1_Calculator\obj\Debug\Week1_Calculator.csproj.GenerateResource.Cache
+C:\Users\001405200\Desktop\Week1_Calculator\Week1_Calculator\obj\Debug\Week1_Calculator.exe
+C:\Users\001405200\Desktop\Week1_Calculator\Week1_Calculator\obj\Debug\Week1_Calculator.pdb
+F:\SE245 - Intro. to C#\Assignments\Week1\Week1_Calculator\Week1_Calculator\bin\Debug\Week1_Calculator.exe.config
+F:\SE245 - Intro. to C#\Assignments\Week1\Week1_Calculator\Week1_Calculator\obj\Debug\Week1_Calculator.exe
+F:\SE245 - Intro. to C#\Assignments\Week1\Week1_Calculator\Week1_Calculator\obj\Debug\Week1_Calculator.pdb
+F:\SE245 - Intro. to C#\Assignments\Assign1_Calculator\Week1_Calculator\bin\Debug\Week1_Calculator.exe.config
+F:\SE245 - Intro. to C#\Assignments\Assign1_Calculator\Week1_Calculator\obj\Debug\Week1_Calculator.exe
+F:\SE245 - Intro. to C#\Assignments\Assign1_Calculator\Week1_Calculator\obj\Debug\Week1_Calculator.pdb
+F:\SE245 - Intro. to C#\Assignments\Assign1_Calculator\Week1_Calculator\bin\Debug\Week1_Calculator.exe
+F:\SE245 - Intro. to C#\Assignments\Assign1_Calculator\Week1_Calculator\bin\Debug\Week1_Calculator.pdb
+F:\SE245 - Intro. to C#\Assignments\Assign1_Calculator\Week1_Calculator\obj\Debug\Week1_Calculator.csprojResolveAssemblyReference.cache
+F:\SE245 - Intro. to C#\Assignments\Assign1_Calculator\Week1_Calculator\obj\Debug\Week1_Calculator.Form1.resources
+F:\SE245 - Intro. to C#\Assignments\Assign1_Calculator\Week1_Calculator\obj\Debug\Week1_Calculator.Properties.Resources.resources
+F:\SE245 - Intro. to C#\Assignments\Assign1_Calculator\Week1_Calculator\obj\Debug\Week1_Calculator.csproj.GenerateResource.Cache
