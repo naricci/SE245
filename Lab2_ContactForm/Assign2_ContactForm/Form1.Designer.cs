@@ -81,7 +81,6 @@
             this.gboxSalutation.Size = new System.Drawing.Size(222, 76);
             this.gboxSalutation.TabIndex = 0;
             this.gboxSalutation.TabStop = false;
-            this.gboxSalutation.Text = "groupBox1";
             // 
             // radMs
             // 
@@ -431,7 +430,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 461);
+            this.ClientSize = new System.Drawing.Size(813, 461);
             this.Controls.Add(this.txt);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.btnClear);
