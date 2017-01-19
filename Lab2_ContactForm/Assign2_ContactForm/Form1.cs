@@ -12,6 +12,8 @@ namespace Assign2_ContactForm
 {
     public partial class frmContactForm : Form
     {
+        string salutation;
+        
         public frmContactForm()
         {
             InitializeComponent();
@@ -42,9 +44,33 @@ namespace Assign2_ContactForm
 
             if (isValid)
             {
+                // Check to see which Radio Button is selected
+                if (radMr.Checked)
+                {
+                    salutation = radMr.Text;
+                }
+                else if (radMrs.Checked)
+                {
+                    salutation = radMrs.Text;
+                }
+                else
+                {
+                    salutation = radMs.Text;
+                }
+               
                 // Loop through the list and add the list to the listbox on the form
-
-                lboxContacts.Items.Add(txtFirstName.Text + " " + txtLastName.Text + "(" + cmbState.SelectedItem.ToString() + ")");
+                lboxContacts.Items.Add(salutation + " " + txtFirstName.Text + " " + txtLastName.Text);
+                lboxContacts.Items.Add(txtStreet1.Text + " " + txtStreet2.Text);
+                lboxContacts.Items.Add(txtCity.Text + ", " + cmbState.SelectedItem.ToString());
+                lboxContacts.Items.Add(txtEmail.Text);
+                lboxContacts.Items.Add(txtHomePhone.Text);
+                lboxContacts.Items.Add(txtWorkPhone.Text);
+                lboxContacts.Items.Add(txtCellPhone.Text);
+                lboxContacts.Items.Add(dtpBirthday.Value);
+                lboxContacts.Items.Add(dtpAnniversary.Value);
+                lboxContacts.Items.Add(chkCardWorthy.Text.ToString());
+                lboxContacts.Items.Add(cmbRelationship.SelectedItem.ToString());
+                lboxContacts.Items.Add(txtNotes.Text);
 
                 DateTime dtBDay = new DateTime();
                 // dtBDay = Convert.ToDateTime(dtpBirthday.Text);
@@ -73,21 +99,29 @@ namespace Assign2_ContactForm
              * 
              */
             
-            // Clear ALL the textboxes together
+            // Loop to clear data from the form
             foreach (var c in this.Controls)
             {
+                // Clear the TextBoxes
                 if (c is TextBox)
                 {
                     ((TextBox)c).Text = String.Empty;
                 }
+                // Clear the DTPs
+                else if (c is DateTimePicker)
+                {
+                    ((DateTimePicker)c).Text = String.Empty;
+                }
+                // Clear the Checkboxes
+                else if (c is CheckBox)
+                {
+                    ((CheckBox)c).Checked = false;
+                }
             }
 
-            // Clear the comboboxes
+            // Clear the Comboboxes
             cmbState.SelectedIndex = 0;
             cmbRelationship.SelectedIndex = 0;
-
-            // Clear the checkboxes
-            chkCardWorthy.Checked = false;
 
             // Clear all the items from the listbox
             lboxContacts.Items.Clear();

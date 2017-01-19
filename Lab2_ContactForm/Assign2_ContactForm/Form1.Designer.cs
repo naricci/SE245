@@ -67,7 +67,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblNotes = new System.Windows.Forms.Label();
-            this.txt = new System.Windows.Forms.TextBox();
+            this.txtNotes = new System.Windows.Forms.TextBox();
             this.gboxSalutation.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -418,20 +418,20 @@
             this.lblNotes.TabIndex = 35;
             this.lblNotes.Text = "Notes";
             // 
-            // txt
+            // txtNotes
             // 
-            this.txt.Location = new System.Drawing.Point(83, 337);
-            this.txt.Multiline = true;
-            this.txt.Name = "txt";
-            this.txt.Size = new System.Drawing.Size(426, 112);
-            this.txt.TabIndex = 16;
+            this.txtNotes.Location = new System.Drawing.Point(83, 337);
+            this.txtNotes.Multiline = true;
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Size = new System.Drawing.Size(426, 112);
+            this.txtNotes.TabIndex = 16;
             // 
             // frmContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 461);
-            this.Controls.Add(this.txt);
+            this.Controls.Add(this.txtNotes);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAdd);
@@ -519,7 +519,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label lblNotes;
-        private System.Windows.Forms.TextBox txt;
+        private System.Windows.Forms.TextBox txtNotes;
     }
 }
 
