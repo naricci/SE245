@@ -42,6 +42,83 @@ namespace Assign2_ContactForm
 
             bool isValid = true;
 
+            // First Name Validation
+            if (!Validators.IsItFilledIn(txtFirstName.Text))
+            {
+                isValid = false;
+                lblFeedback.Text += "Error:  Please enter a first name.\n";
+            }
+
+            // Last Name Validation 
+            else if (!Validators.IsItFilledIn(txtLastName.Text))
+            {
+                isValid = false;
+                lblFeedback.Text += "Error:  Please enter a last name.\n";
+            }
+            
+            // if/else statement for names validation go here
+
+            // State Validator
+            if (cmbState.SelectedIndex == 0)
+            {
+                isValid = false;
+                lblFeedback.Text += "Error:  Please select a state from the dropdown menu.\n";
+            }
+
+            // Zip Code Validation
+            if (!Validators.IsAllDigits(txtZip.Text))
+            {
+                isValid = true;
+                lblFeedback.Text += "Error:  Please enter a valid zip code.\n";
+            }
+            
+
+            // Email Validation
+            if (!Validators.IsValidEmail(txtEmail.Text))
+            {
+                isValid = true;
+                lblFeedback.Text += "Error:  Please enter a valid email address.\n";
+            }
+            
+            // Home Phone Validator
+            if (Validators.IsItFilledIn(txtHomePhone.Text))
+            {
+                if (!Validators.IsValidPhoneNumber(txtHomePhone.Text) == false)
+                {
+                    isValid = false;
+                    lblFeedback.Text += "Error:  Please enter a valid home phone number.\n";
+                }
+            }
+
+            // Work Phone Validator
+            if (Validators.IsItFilledIn(txtWorkPhone.Text))
+            {
+                if (!Validators.IsValidPhoneNumber(txtWorkPhone.Text) == false)
+                {
+                    isValid = false;
+                    lblFeedback.Text += "Error:  Please enter a valid work phone number.\n";
+                }
+            }
+
+            // Cell Phone Validator
+            if (Validators.IsItFilledIn(txtCellPhone.Text))
+            {
+                if (!Validators.IsValidPhoneNumber(txtCellPhone.Text) == false)
+                {
+                    isValid = false;
+                    lblFeedback.Text += "Error:  Please enter a valid cell phone number.\n";
+                }
+            }
+
+            /** Relationship Validator
+             *  if (cmbRelationship.SelectedIndex == 0)
+             *  {
+             *      isValid = false;
+             *      lblFeedback.Text += "Error: Please select a relationship from the dropdown menu.\n";
+             *  } 
+             */
+            
+
             if (isValid)
             {
                 // Check to see which Radio Button is selected
@@ -57,11 +134,11 @@ namespace Assign2_ContactForm
                 {
                     salutation = radMs.Text;
                 }
-               
+                     
                 // Loop through the list and add the list to the listbox on the form
                 lboxContacts.Items.Add(salutation + " " + txtFirstName.Text + " " + txtLastName.Text);
                 lboxContacts.Items.Add(txtStreet1.Text + " " + txtStreet2.Text);
-                lboxContacts.Items.Add(txtCity.Text + ", " + cmbState.SelectedItem.ToString());
+                lboxContacts.Items.Add(txtCity.Text + ", " + cmbState.SelectedItem.ToString() + ", " + txtZip.Text);
                 lboxContacts.Items.Add(txtEmail.Text);
                 lboxContacts.Items.Add(txtHomePhone.Text);
                 lboxContacts.Items.Add(txtWorkPhone.Text);
@@ -98,7 +175,7 @@ namespace Assign2_ContactForm
              * txtCellPhone.Text = "";
              * 
              */
-            
+
             // Loop to clear data from the form
             foreach (var c in this.Controls)
             {
@@ -125,6 +202,9 @@ namespace Assign2_ContactForm
 
             // Clear all the items from the listbox
             lboxContacts.Items.Clear();
+
+            // Clear the Feedback Label
+            lblFeedback.Text = "";
         }
     }
 }

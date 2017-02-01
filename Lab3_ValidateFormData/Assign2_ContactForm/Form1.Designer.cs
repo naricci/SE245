@@ -121,6 +121,7 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(164, 20);
             this.txtFirstName.TabIndex = 1;
+            this.txtFirstName.Text = "Nick";
             // 
             // txtLastName
             // 
@@ -128,6 +129,7 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(164, 20);
             this.txtLastName.TabIndex = 2;
+            this.txtLastName.Text = "Ricci";
             // 
             // txtStreet1
             // 
@@ -135,6 +137,7 @@
             this.txtStreet1.Name = "txtStreet1";
             this.txtStreet1.Size = new System.Drawing.Size(164, 20);
             this.txtStreet1.TabIndex = 3;
+            this.txtStreet1.Text = "261 Bayview Avenue";
             // 
             // txtStreet2
             // 
@@ -375,7 +378,7 @@
             // lblFeedback
             // 
             this.lblFeedback.AutoSize = true;
-            this.lblFeedback.Location = new System.Drawing.Point(506, 111);
+            this.lblFeedback.Location = new System.Drawing.Point(564, 360);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(55, 13);
             this.lblFeedback.TabIndex = 31;
@@ -384,16 +387,16 @@
             // lboxContacts
             // 
             this.lboxContacts.FormattingEnabled = true;
-            this.lboxContacts.Location = new System.Drawing.Point(567, 107);
+            this.lboxContacts.Location = new System.Drawing.Point(567, 26);
             this.lboxContacts.Name = "lboxContacts";
-            this.lboxContacts.Size = new System.Drawing.Size(223, 290);
+            this.lboxContacts.Size = new System.Drawing.Size(250, 290);
             this.lboxContacts.TabIndex = 17;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(567, 414);
+            this.btnAdd.Location = new System.Drawing.Point(567, 322);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(103, 35);
+            this.btnAdd.Size = new System.Drawing.Size(119, 35);
             this.btnAdd.TabIndex = 18;
             this.btnAdd.Text = "Add Contact";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -401,9 +404,9 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(687, 414);
+            this.btnClear.Location = new System.Drawing.Point(698, 322);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(103, 35);
+            this.btnClear.Size = new System.Drawing.Size(119, 35);
             this.btnClear.TabIndex = 19;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -423,14 +426,14 @@
             this.txtNotes.Location = new System.Drawing.Point(83, 337);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(426, 112);
+            this.txtNotes.Size = new System.Drawing.Size(426, 158);
             this.txtNotes.TabIndex = 16;
             // 
             // frmContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 461);
+            this.ClientSize = new System.Drawing.Size(849, 507);
             this.Controls.Add(this.txtNotes);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.btnClear);
