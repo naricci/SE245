@@ -50,13 +50,22 @@ namespace Assign2_ContactForm
             }
 
             // Last Name Validation 
-            else if (!Validators.IsItFilledIn(txtLastName.Text))
+            if (!Validators.IsItFilledIn(txtLastName.Text))
             {
                 isValid = false;
                 lblFeedback.Text += "Error:  Please enter a last name.\n";
             }
-            
+
             // if/else statement for names validation go here
+            /**
+             *  else if (!Validators.IsItFilledIn(txtFirstName.Text) && !Validators.IsItFilledIn(txtLastName.Text))
+             *  {
+             *      isValid = false;
+             *      lblFeedback.Text += "Error:  Please enter either a first or last name.\n";
+             *  }
+             * 
+             */
+           
 
             // State Validator
             if (cmbState.SelectedIndex == 0)
@@ -66,10 +75,15 @@ namespace Assign2_ContactForm
             }
 
             // Zip Code Validation
-            if (!Validators.IsAllDigits(txtZip.Text))
+            if (Validators.IsItFilledIn(txtZip.Text))
             {
-                isValid = true;
-                lblFeedback.Text += "Error:  Please enter a valid zip code.\n";
+                isValid = false;
+                lblFeedback.Text += "Error:  Must enter a zip code.\n";
+            }
+            if (Validators.IsValidZip(txtZip.Text))
+            {
+                isValid = false;
+                lblFeedback.Text += "Error:  Please enter a 5 digit zip code.\n";
             }
             
 
@@ -83,7 +97,7 @@ namespace Assign2_ContactForm
             // Home Phone Validator
             if (Validators.IsItFilledIn(txtHomePhone.Text))
             {
-                if (!Validators.IsValidPhoneNumber(txtHomePhone.Text) == false)
+                if (!Validators.IsValidPhoneNumber(txtHomePhone.Text))
                 {
                     isValid = false;
                     lblFeedback.Text += "Error:  Please enter a valid home phone number.\n";
@@ -117,7 +131,7 @@ namespace Assign2_ContactForm
              *      lblFeedback.Text += "Error: Please select a relationship from the dropdown menu.\n";
              *  } 
              */
-            
+
 
             if (isValid)
             {

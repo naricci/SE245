@@ -85,9 +85,17 @@ namespace Assign2_ContactForm
             //assume true, but look for bad stuff to make it false
             bool result = true;
 
-            if (temp.Length != 5)
+            foreach (Char c in temp)
             {
-                result = true;
+                if (Char.IsDigit(c) == false)
+                {
+                    result = false;
+                }
+            }
+
+            if (temp.Length < 5 || temp.Length > 5)
+            {
+                result = false;
             }
 
             return result;
@@ -98,6 +106,14 @@ namespace Assign2_ContactForm
         public static bool IsValidPhoneNumber(string temp)
         {
             bool result = true;
+
+            foreach (Char c in temp)
+            {
+                if (Char.IsDigit(c) == false)
+                {
+                    result = false;
+                }
+            }
 
             if (temp.Length >= 10)
             {
