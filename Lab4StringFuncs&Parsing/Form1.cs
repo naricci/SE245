@@ -42,13 +42,18 @@ namespace Lab4StringFuncsAndParsing
             result += strLastName + strFirstName + "-" + strMaidenName + strBirthplace;
 
             // Display Output
-            lblOutput.Text += result;
+            // lblOutput.Text += result;
+            txtOutput.Text += result;
+
+            // Censor Jedi Name Output:
+            txtOutput.Text = Censor(txtOutput.Text);
         }
 
         private void btnClearResult_Click(object sender, EventArgs e)
         {
             // Clear the Output Label
-            lblOutput.Text = "Your Jedi Name:  ";
+            // lblOutput.Text = "Your Jedi Name:  ";
+            txtOutput.Text = "";
         }
 
         private void btnClearForm_Click(object sender, EventArgs e)
@@ -58,6 +63,26 @@ namespace Lab4StringFuncsAndParsing
             txtLastName.Text = "";
             txtMaidenName.Text = "";
             txtBirthplace.Text = "";
+        }
+
+        private string Censor(string strOutput)
+        {
+            // Declare the resulting string
+            string strResult = "";
+
+            //Create a list of bad words 
+            //(could also use "split" function)
+
+
+            //Loop thru list of bad words and
+            // Get rid of bad words (replace)
+            string badwords = "homework";
+
+            strOutput = strOutput.Replace(badwords, "***");
+
+
+            //return the string
+            return strResult = strOutput;
         }
     }
 }

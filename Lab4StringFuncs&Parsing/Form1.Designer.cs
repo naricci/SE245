@@ -48,7 +48,7 @@
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(35, 49);
+            this.lblFirstName.Location = new System.Drawing.Point(39, 75);
             this.lblFirstName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(116, 25);
@@ -58,7 +58,7 @@
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(35, 112);
+            this.lblLastName.Location = new System.Drawing.Point(39, 138);
             this.lblLastName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(115, 25);
@@ -68,7 +68,7 @@
             // lblMaidenName
             // 
             this.lblMaidenName.AutoSize = true;
-            this.lblMaidenName.Location = new System.Drawing.Point(35, 185);
+            this.lblMaidenName.Location = new System.Drawing.Point(39, 211);
             this.lblMaidenName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblMaidenName.Name = "lblMaidenName";
             this.lblMaidenName.Size = new System.Drawing.Size(145, 25);
@@ -78,7 +78,7 @@
             // lblBirthplace
             // 
             this.lblBirthplace.AutoSize = true;
-            this.lblBirthplace.Location = new System.Drawing.Point(35, 255);
+            this.lblBirthplace.Location = new System.Drawing.Point(39, 281);
             this.lblBirthplace.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblBirthplace.Name = "lblBirthplace";
             this.lblBirthplace.Size = new System.Drawing.Size(157, 25);
@@ -87,7 +87,7 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(211, 43);
+            this.txtFirstName.Location = new System.Drawing.Point(215, 69);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(6);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(276, 31);
@@ -95,7 +95,7 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(211, 107);
+            this.txtLastName.Location = new System.Drawing.Point(215, 133);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(6);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(276, 31);
@@ -103,7 +103,7 @@
             // 
             // txtMaidenName
             // 
-            this.txtMaidenName.Location = new System.Drawing.Point(211, 179);
+            this.txtMaidenName.Location = new System.Drawing.Point(215, 205);
             this.txtMaidenName.Margin = new System.Windows.Forms.Padding(6);
             this.txtMaidenName.Name = "txtMaidenName";
             this.txtMaidenName.Size = new System.Drawing.Size(276, 31);
@@ -111,7 +111,7 @@
             // 
             // txtBirthplace
             // 
-            this.txtBirthplace.Location = new System.Drawing.Point(211, 249);
+            this.txtBirthplace.Location = new System.Drawing.Point(215, 275);
             this.txtBirthplace.Margin = new System.Windows.Forms.Padding(6);
             this.txtBirthplace.Name = "txtBirthplace";
             this.txtBirthplace.Size = new System.Drawing.Size(276, 31);
@@ -119,17 +119,17 @@
             // 
             // txtOutput
             // 
-            this.txtOutput.Location = new System.Drawing.Point(646, 154);
+            this.txtOutput.Location = new System.Drawing.Point(646, 116);
             this.txtOutput.Margin = new System.Windows.Forms.Padding(6);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
-            this.txtOutput.Size = new System.Drawing.Size(480, 303);
+            this.txtOutput.Size = new System.Drawing.Size(370, 139);
             this.txtOutput.TabIndex = 7;
             // 
             // lblOutput
             // 
             this.lblOutput.AutoSize = true;
-            this.lblOutput.Location = new System.Drawing.Point(641, 123);
+            this.lblOutput.Location = new System.Drawing.Point(641, 85);
             this.lblOutput.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblOutput.Name = "lblOutput";
             this.lblOutput.Size = new System.Drawing.Size(172, 25);
@@ -138,21 +138,21 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(646, 469);
+            this.btnCreate.Location = new System.Drawing.Point(646, 267);
             this.btnCreate.Margin = new System.Windows.Forms.Padding(6);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(232, 73);
+            this.btnCreate.Size = new System.Drawing.Size(176, 49);
             this.btnCreate.TabIndex = 8;
-            this.btnCreate.Text = "Create Jedi Name";
+            this.btnCreate.Text = "Create Name";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnClearResult
             // 
-            this.btnClearResult.Location = new System.Drawing.Point(894, 469);
+            this.btnClearResult.Location = new System.Drawing.Point(840, 267);
             this.btnClearResult.Margin = new System.Windows.Forms.Padding(6);
             this.btnClearResult.Name = "btnClearResult";
-            this.btnClearResult.Size = new System.Drawing.Size(232, 73);
+            this.btnClearResult.Size = new System.Drawing.Size(176, 49);
             this.btnClearResult.TabIndex = 9;
             this.btnClearResult.Text = "Clear Results";
             this.btnClearResult.UseVisualStyleBackColor = true;
@@ -169,16 +169,16 @@
             this.gboxJediForm.Controls.Add(this.lblBirthplace);
             this.gboxJediForm.Controls.Add(this.txtMaidenName);
             this.gboxJediForm.Controls.Add(this.txtLastName);
-            this.gboxJediForm.Location = new System.Drawing.Point(69, 123);
+            this.gboxJediForm.Location = new System.Drawing.Point(69, 85);
             this.gboxJediForm.Name = "gboxJediForm";
-            this.gboxJediForm.Size = new System.Drawing.Size(536, 419);
+            this.gboxJediForm.Size = new System.Drawing.Size(536, 457);
             this.gboxJediForm.TabIndex = 10;
             this.gboxJediForm.TabStop = false;
             this.gboxJediForm.Text = "Please fill out the following:";
             // 
             // btnClearForm
             // 
-            this.btnClearForm.Location = new System.Drawing.Point(311, 328);
+            this.btnClearForm.Location = new System.Drawing.Point(315, 354);
             this.btnClearForm.Margin = new System.Windows.Forms.Padding(6);
             this.btnClearForm.Name = "btnClearForm";
             this.btnClearForm.Size = new System.Drawing.Size(176, 49);
