@@ -28,3 +28,6 @@ F:\Repos\SE245\Lab2_ContactForm\Assign2_ContactForm\obj\Debug\Assign2_ContactFor
 E:\Repos\SE245\Lab2_ContactForm\Assign2_ContactForm\bin\Debug\Assign2_ContactForm.exe.config
 E:\Repos\SE245\Lab2_ContactForm\Assign2_ContactForm\obj\Debug\Assign2_ContactForm.exe
 E:\Repos\SE245\Lab2_ContactForm\Assign2_ContactForm\obj\Debug\Assign2_ContactForm.pdb
+D:\Repos\SE245\Lab2_ContactForm\Assign2_ContactForm\bin\Debug\Assign2_ContactForm.exe.config
+D:\Repos\SE245\Lab2_ContactForm\Assign2_ContactForm\obj\Debug\Assign2_ContactForm.exe
+D:\Repos\SE245\Lab2_ContactForm\Assign2_ContactForm\obj\Debug\Assign2_ContactForm.pdb
