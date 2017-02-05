@@ -46,3 +46,9 @@ E:\Repos\SE245\Lab3_ValidateFormData\Assign2_ContactForm\obj\Debug\Assign2_Conta
 D:\Repos\SE245\Lab3_ValidateFormData\Assign2_ContactForm\bin\Debug\Assign2_ContactForm.exe.config
 D:\Repos\SE245\Lab3_ValidateFormData\Assign2_ContactForm\obj\Debug\Assign2_ContactForm.exe
 D:\Repos\SE245\Lab3_ValidateFormData\Assign2_ContactForm\obj\Debug\Assign2_ContactForm.pdb
+D:\Repos\SE245\Lab3_ValidateFormData\Assign2_ContactForm\bin\Debug\Assign2_ContactForm.exe
+D:\Repos\SE245\Lab3_ValidateFormData\Assign2_ContactForm\bin\Debug\Assign2_ContactForm.pdb
+D:\Repos\SE245\Lab3_ValidateFormData\Assign2_ContactForm\obj\Debug\Assign2_ContactForm.csprojResolveAssemblyReference.cache
+D:\Repos\SE245\Lab3_ValidateFormData\Assign2_ContactForm\obj\Debug\Assign2_ContactForm.frmContactForm.resources
+D:\Repos\SE245\Lab3_ValidateFormData\Assign2_ContactForm\obj\Debug\Assign2_ContactForm.Properties.Resources.resources
+D:\Repos\SE245\Lab3_ValidateFormData\Assign2_ContactForm\obj\Debug\Assign2_ContactForm.csproj.GenerateResource.Cache

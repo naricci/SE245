@@ -12,7 +12,7 @@ namespace Assign2_ContactForm
         // Library of validation functions we can use in future projects
         //**********************************************************************************************
 
-        //Receives a string and we can let user know if it is filled in
+        // Receives a string and we can let user know if it is filled in
         public static bool IsItFilledIn(string temp)
         {
             bool result = false;
@@ -25,9 +25,7 @@ namespace Assign2_ContactForm
             return result;
         }
 
-
-
-        //Receives a string and we can let user know if it is filled in
+        // Receives a string and we can let user know if it is filled in
         public static bool IsItFilledIn(string temp, int minlen)
         {
             bool result = false;
@@ -40,25 +38,21 @@ namespace Assign2_ContactForm
             return result;
         }
 
-
-
-
-
-        //Receives a string and we can let user know if it has a semi-valid email format
+        // Receives a string and we can let user know if it has a semi-valid email format
         public static bool IsValidEmail(string temp)
         {
-            //assume true, but look for bad stuff to make it false
+            // Assume true, but look for bad stuff to make it false
             bool result = true;
 
-            //Look for position of "@"
+            // Look for position of "@"
             int atLocation = temp.IndexOf("@");
             int NextatLocation = temp.IndexOf("@", atLocation + 1);
 
-            //temp = scott@neit.ca
+            // temp = scott@neit.ca
             // length = 13
             // position of last period = 10
 
-            //Look for position of last period "."
+            // Look for position of last period "."
             int periodLocation = temp.LastIndexOf(".");
 
             //check for minimum length
@@ -84,7 +78,7 @@ namespace Assign2_ContactForm
         {
             //assume true, but look for bad stuff to make it false
             bool result = true;
-
+            
             foreach (Char c in temp)
             {
                 if (Char.IsDigit(c) == false)
@@ -92,7 +86,7 @@ namespace Assign2_ContactForm
                     result = false;
                 }
             }
-
+            
             if (temp.Length < 5 || temp.Length > 5)
             {
                 result = false;
@@ -102,7 +96,7 @@ namespace Assign2_ContactForm
         }
 
 
-        // Phone Func - Checks to make sure length equals atleast 10 digits
+        // Phone Func - Checks to make sure length is at least 10 digits
         public static bool IsValidPhoneNumber(string temp)
         {
             bool result = true;
@@ -115,9 +109,9 @@ namespace Assign2_ContactForm
                 }
             }
 
-            if (temp.Length >= 10)
+            if (temp.Length < 10)
             {
-                result = true;
+                result = false;
             }
 
             return result;
@@ -136,11 +130,7 @@ namespace Assign2_ContactForm
                     result = false;
                 }
             }
-
-            if (temp.Length < 5 || temp.Length > 5)
-            {
-                result = false;
-            }
+            
             return result;
         }
     }
