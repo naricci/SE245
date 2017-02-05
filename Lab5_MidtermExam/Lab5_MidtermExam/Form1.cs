@@ -18,9 +18,8 @@ namespace Lab5_MidtermExam
         }
 
         // Variables
-        double pizzaPrice, toppingPrice, totalPrice;
-        int emailMin, phoneMin;
-        string pizzaSize, pizzaTopping, salutation;
+        double pizzaPrice, toppingPrice;
+        string pizzaSize, pizzaTopping;
 
         private void chkMeatball_CheckedChanged(object sender, EventArgs e)
         {
@@ -54,60 +53,97 @@ namespace Lab5_MidtermExam
 
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
-            // Display Total Cost of Pizza in Label
-            lblTotalCost.Text += (pizzaPrice + toppingPrice).ToString("c");
+            bool isValid = true;
 
-            // Display Order info in ListBox
-            lboxOrder.Items.Add("Your Order:");
-            lboxOrder.Items.Add("\n" + pizzaSize + " Pizza with" + pizzaTopping);
+            // Check if First Name is filled in
+            if (!ValidationLibrary.IsItFilledIn(txtFirstName.Text))
+            {
+                isValid = false;
+                lboxOrder.Items.Add("Please enter a First Name.\n");
+            }
+            
+            // Check if Last Name is filled in
+            if (!ValidationLibrary.IsItFilledIn(txtLastName.Text))
+            {
+                isValid = false;
+                lboxOrder.Items.Add("Please enter a Last Name.\n");
+            }
+
+            // Check if Email Address is Valid
+            if (!ValidationLibrary.IsValidEmail(txtEmail.Text))
+            {
+                isValid = false;
+                lboxOrder.Items.Add("Please enter a valid Email Address.\n");
+            }
+
+            // Check if Phone Number is Valid
+            if (!ValidationLibrary.IsValidPhoneNumber(txtPhone.Text))
+            {
+                isValid = false;
+                lboxOrder.Items.Add("Please enter a valid Phone Number.\n");
+            }
+
+            if (isValid) //Adds Everything together
+            {
+                // Display Total Cost of Pizza in Label
+                lblTotalCost.Text += (pizzaPrice + toppingPrice).ToString("c");
+
+                // Display Order info in ListBox
+                lboxOrder.Items.Add("Your Order:");
+                lboxOrder.Items.Add(pizzaSize + " Pizza with" + pizzaTopping);
+                lboxOrder.Items.Add("Delivery Info:");
+                lboxOrder.Items.Add(txtFirstName.Text + " " + txtLastName.Text);
+                lboxOrder.Items.Add(txtStreet1.Text + txtStreet2.Text);
+                lboxOrder.Items.Add(cmbCity.Text + ", " + cmbState.Text);
+            }
         }
 
         private void chkPeppers_CheckedChanged(object sender, EventArgs e)
         {
             pizzaTopping += " Peppers";
-            pizzaSize += 0.50;
+            toppingPrice += 0.50;
         }
 
         private void chkOnions_CheckedChanged(object sender, EventArgs e)
         {
             pizzaTopping += " Onions";
-            pizzaSize += 0.50;
+            toppingPrice += 0.50;
         }
 
         private void chkOlives_CheckedChanged(object sender, EventArgs e)
         {
             pizzaTopping += " Olives";
-            pizzaSize += 0.50;
+            toppingPrice += 0.50;
         }
 
         private void chkSpinach_CheckedChanged(object sender, EventArgs e)
         {
             pizzaTopping += " Spinach";
-            pizzaSize += 0.50;
+            toppingPrice += 0.50;
         }
 
         private void chkPineapple_CheckedChanged(object sender, EventArgs e)
         {
             pizzaTopping += " Pineapple";
-            pizzaSize += 0.50;
+            toppingPrice += 0.50;
         }
 
         private void chkBBQ_CheckedChanged(object sender, EventArgs e)
         {
             pizzaTopping += " BBQ Sauce";
-            pizzaSize += 0.50;
+            toppingPrice += 0.50;
         }
 
         private void chkExtraCheese_CheckedChanged(object sender, EventArgs e)
         {
             pizzaTopping += " Extra Cheese";
-            pizzaSize += 0.50;
+            toppingPrice += 0.50;
         }
 
         private void chkSpit_CheckedChanged(object sender, EventArgs e)
         {
             pizzaTopping += " Spit";
-            pizzaSize += 0.50;
+            toppingPrice += 0.50;
         }
 
         private void btnClearOrder_Click(object sender, EventArgs e)
@@ -133,7 +169,14 @@ namespace Lab5_MidtermExam
                 if (c is CheckBox)                      // If Control true, then...
                     ((CheckBox)c).Checked = false;      // Uncheck All Checkboxes
             }
-
+            /*
+            // Clear Checkboxes (Pizza Toppings)        
+            foreach (Control c in gboxDeliveryInfo.Controls)
+            {
+                if (c is TextBox)                      // If Control true, then...
+                    ((TextBox)c).Checked = false;      // Uncheck All Checkboxes
+            }
+            */
             // Clear City/State Drop-Downs Back to Default
             cmbCity.SelectedIndex = 0;
             cmbState.SelectedIndex = 4;
@@ -142,7 +185,7 @@ namespace Lab5_MidtermExam
         private void chkSausage_CheckedChanged(object sender, EventArgs e)
         {
             pizzaTopping += " Sausage";
-            pizzaPrice += 0.50;
+            toppingPrice += 0.50;
         }
 
         private void chkPepperoni_CheckedChanged(object sender, EventArgs e)
