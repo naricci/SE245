@@ -169,14 +169,17 @@ namespace Lab5_MidtermExam
                 if (c is CheckBox)                      // If Control true, then...
                     ((CheckBox)c).Checked = false;      // Uncheck All Checkboxes
             }
-            /*
+            
             // Clear Checkboxes (Pizza Toppings)        
-            foreach (Control c in gboxDeliveryInfo.Controls)
+            foreach (var c in gboxDeliveryInfo.Controls)
             {
-                if (c is TextBox)                      // If Control true, then...
-                    ((TextBox)c).Checked = false;      // Uncheck All Checkboxes
+                // Clear the TextBoxes
+                if (c is TextBox)
+                {
+                    ((TextBox)c).Text = String.Empty;
+                }
             }
-            */
+
             // Clear City/State Drop-Downs Back to Default
             cmbCity.SelectedIndex = 0;
             cmbState.SelectedIndex = 4;
