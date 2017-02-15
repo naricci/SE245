@@ -36,7 +36,7 @@ namespace Assign2_ContactForm
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
-        {
+        { 
             // Make sure the feedback label is cleared from any previous attempts
             lblFeedback.Text = "";
 
@@ -57,7 +57,7 @@ namespace Assign2_ContactForm
                 {
                     salutation = radMs.Text;
                 }
-
+                /*
                 // Loop through the list and add the list to the listbox on the form
                 lboxContacts.Items.Add(salutation + " " + txtFirstName.Text + " " + txtLastName.Text);
                 lboxContacts.Items.Add(txtStreet1.Text + " " + txtStreet2.Text);
@@ -77,70 +77,70 @@ namespace Assign2_ContactForm
                 dtBDay = dtpBirthday.Value;
 
                 // lblFeedback.Text = dtBDay.ToShortDateString();
-            }
-            
-            /**************************** FORM VALIDATION ********************************/
+            } */
 
-            // First Name Validation
-            if (!Validators.IsItFilledIn(txtFirstName.Text))
-            {
-                isValid = false;
-                lblFeedback.Text += "Error:  Please enter a first name.\n";
-            }
+                /**************************** FORM VALIDATION ********************************/
 
-            // Last Name Validation 
-            if (!Validators.IsItFilledIn(txtLastName.Text))
-            {
-                isValid = false;
-                lblFeedback.Text += "Error:  Please enter a last name.\n";
-            }  
+                // First Name Validation
+                /* if (!Validators.IsItFilledIn(txtFirstName.Text))
+                   {
+                       isValid = false;
+                       lblFeedback.Text += "Error:  Please enter a first name.\n";
+                   }
 
-            // State Validator
-            if (cmbState.SelectedIndex == 0)
-            {
-                isValid = false;
-                lblFeedback.Text += "Error:  Please select a state from the dropdown menu.\n";
-            }
+                   // Last Name Validation 
+                   if (!Validators.IsItFilledIn(txtLastName.Text))
+                   {
+                       isValid = false;
+                       lblFeedback.Text += "Error:  Please enter a last name.\n";
+                   }  
 
-            // Zip Code Validation
-            if (!Validators.IsValidZip(txtZip.Text))
-            {
-                isValid = true;
-                lblFeedback.Text += "Error:  Must enter a valid zip code.\n";
-            }
-            
-            // Email Validation
-            if (!Validators.IsValidEmail(txtEmail.Text))
-            {
-                isValid = true;
-                lblFeedback.Text += "Error:  Please enter a valid email address.\n";
-            }
-            
-            // Home Phone Validator
-            if (!Validators.IsValidPhoneNumber(txtHomePhone.Text))
-            {
-                isValid = false;
-                lblFeedback.Text += "Error:  Please enter a valid home phone number.\n";
-            }
+                   // State Validator
+                   if (cmbState.SelectedIndex == 0)
+                   {
+                       isValid = false;
+                       lblFeedback.Text += "Error:  Please select a state from the dropdown menu.\n";
+                   }
 
-            // Work Phone Validator
-            if (!Validators.IsValidPhoneNumber(txtWorkPhone.Text))
-            {
-                isValid = false;
-                lblFeedback.Text += "Error:  Please enter a valid work phone number.\n";
-            }
+                   // Zip Code Validation
+                   if (!Validators.IsValidZip(txtZip.Text))
+                   {
+                       isValid = true;
+                       lblFeedback.Text += "Error:  Must enter a valid zip code.\n";
+                   }
 
-            // Cell Phone Validator
-            if (!Validators.IsValidPhoneNumber(txtCellPhone.Text))
-            {
-                isValid = false;
-                lblFeedback.Text += "Error:  Please enter a valid cell phone number.\n";
-            }
+                   // Email Validation
+                   if (!Validators.IsValidEmail(txtEmail.Text))
+                   {
+                       isValid = true;
+                       lblFeedback.Text += "Error:  Please enter a valid email address.\n";
+                   }
 
-            /******************** Save Data to File ********************/
+                   // Home Phone Validator
+                   if (!Validators.IsValidPhoneNumber(txtHomePhone.Text))
+                   {
+                       isValid = false;
+                       lblFeedback.Text += "Error:  Please enter a valid home phone number.\n";
+                   }
 
-            // create a string to gather the data
-            string contactRecord;
+                   // Work Phone Validator
+                   if (!Validators.IsValidPhoneNumber(txtWorkPhone.Text))
+                   {
+                       isValid = false;
+                       lblFeedback.Text += "Error:  Please enter a valid work phone number.\n";
+                   }
+
+                   // Cell Phone Validator
+                   if (!Validators.IsValidPhoneNumber(txtCellPhone.Text))
+                   {
+                       isValid = false;
+                       lblFeedback.Text += "Error:  Please enter a valid cell phone number.\n";
+                   } */
+
+                /******************** Save Data to File ********************/
+
+                // create a string to gather the data
+                string contactRecord;
 
             // start storing contact info
             contactRecord = DateTime.Now.ToShortDateString() + "," + txtFirstName.Text + "," + txtLastName.Text;
@@ -150,22 +150,8 @@ namespace Assign2_ContactForm
         }
 
         private void btnClear_Click(object sender, EventArgs e)
-          {
-              /** Clear the textboxes individually
-               *
-               * txtFirstName.Text = "";
-               * txtFirstName.Clear();       // Another way to clear 
-               * txtLastName.Text = "";
-               * txtStreet1.Text = "";
-               * txtStreet2.Text = "";
-               * txtCity.Text = "";
-               * txtZip.Text = "";
-               * txtEmail.Text = "";
-               * txtHomePhone.Text = "";
-               * txtWorkPhone.Text = "";
-               * txtCellPhone.Text = "";
-               * 
-               */
+        {
+              
 
             // Loop to clear data from the form
             foreach (var c in this.Controls)
