@@ -12,7 +12,7 @@ namespace Assign2_ContactForm
 {
     public partial class frmContactForm : Form
     {
-        string myString, salutation;
+        string salutation;
         
         public frmContactForm()
         {
@@ -21,7 +21,18 @@ namespace Assign2_ContactForm
 
         private void frmContactForm_Load(object sender, EventArgs e)
         {
-            // Populate combobox with items
+            // Populate State combobox with items
+            cmbState.Items.Add("Pick a State...");
+            cmbState.Items.Add("CT");
+            cmbState.Items.Add("MA");
+            cmbState.Items.Add("ME");
+            cmbState.Items.Add("NH");
+            cmbState.Items.Add("NY");
+            cmbState.Items.Add("CT");
+            cmbState.Items.Add("RI");
+            cmbState.Items.Add("VT");
+
+            // Populate Relationship combobox with items
             cmbRelationship.Items.Add("Choose Relationship");
             cmbRelationship.Items.Add("Spouse");
             cmbRelationship.Items.Add("Parent");
@@ -38,7 +49,7 @@ namespace Assign2_ContactForm
         private void btnAdd_Click(object sender, EventArgs e)
         { 
             // Make sure the feedback label is cleared from any previous attempts
-            lblFeedback.Text = "";
+            txtOutput.Text = "";
 
             bool isValid = true;
 
@@ -76,8 +87,8 @@ namespace Assign2_ContactForm
                 // dtBDay = Convert.ToDateTime(dtpBirthday.Text);
                 dtBDay = dtpBirthday.Value;
 
-                // lblFeedback.Text = dtBDay.ToShortDateString();
-            } */
+                // lblFeedback.Text = dtBDay.ToShortDateString(); */
+            } 
 
                 /**************************** FORM VALIDATION ********************************/
 
@@ -137,16 +148,30 @@ namespace Assign2_ContactForm
                        lblFeedback.Text += "Error:  Please enter a valid cell phone number.\n";
                    } */
 
-                /******************** Save Data to File ********************/
+            if (chkCardWorthy.Checked)
+            {
+                chkCardWorthy.Text = "Card Worthy";
+            }
+            else
+            {
+                chkCardWorthy.Text = "Not Card Worthy";
+            }
 
-                // create a string to gather the data
-                string contactRecord;
+            /******************** Open/Append Data to File ********************/
 
-            // start storing contact info
-            contactRecord = DateTime.Now.ToShortDateString() + "," + txtFirstName.Text + "," + txtLastName.Text;
+            // create a string to gather the data
+            string contactRecord;
 
-            // display record in Output Label
-            contactRecord = lblOutput.Text;
+            // Start storing contact info
+            contactRecord = DateTime.Now.ToShortDateString() + "," + txtFirstName.Text + "," + txtLastName.Text + "," + txtStreet1.Text + "," + txtStreet2.Text + "," + txtCity.Text + "," + cmbState.Text.ToString() + "," + txtZip.Text + "," + txtEmail.Text + "," + txtHomePhone.Text + "," + txtWorkPhone.Text + "," + txtCellPhone.Text + "," + dtpBirthday.Text.ToString() + "," + dtpAnniversary.Text.ToString() + "," + chkCardWorthy.Text.ToString() + "," + cmbRelationship.Text.ToString();
+
+            // Display Contact Name in Output/Feedback Label
+            lblOutput.Text = DateTime.Now.ToShortDateString() + " " + txtFirstName.Text + " " + txtLastName.Text;
+
+            // Display Contact Info in Output Textbox
+            txtOutput.Text = contactRecord;
+
+            FileIO.writeFile(@"C:\Test\Contacts.csv", contactRecord);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -173,15 +198,18 @@ namespace Assign2_ContactForm
                 }
             }
 
+            // Reset Feedback Label
+            lblOutput.Text = "Contact";
+
             // Clear the Comboboxes
             cmbState.SelectedIndex = 0;
             cmbRelationship.SelectedIndex = 0;
 
             // Clear all the items from the listbox
-            lboxContacts.Items.Clear();
+            //lboxContacts.Items.Clear();
 
             // Clear the Feedback Label
-            lblFeedback.Text = "";
+            //lblFeedback.Text = "";
         }
     }
 }

@@ -9,12 +9,15 @@ namespace Assign2_ContactForm
 {
     class FileIO
     {
-        public static void writeFile(string myFileName, string myString)
+        public static string writeFile(string myFileName, string myString)
         {
             // Declare StreamWriter Object
             StreamWriter sw;
 
-            string results = "OK";
+            // string results = "OK";
+            
+            // String for Feedback
+            string strFeedback = "Record Added Successfully";
 
             // Try Catch Block
             try
@@ -39,12 +42,14 @@ namespace Assign2_ContactForm
             catch (Exception err)
             {
                 string x = err.Message;
+                strFeedback = "ERROR: " + x;
             }
             finally
             {
             }
 
-            return results;
+            // return feedback
+            return strFeedback;
         }
     }
 }
