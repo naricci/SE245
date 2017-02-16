@@ -17,3 +17,6 @@ D:\Repos\SE245\Lab4StringFuncs&Parsing\obj\Debug\Lab4StringFuncsAndParsing.cspro
 D:\Repos\SE245\Lab4StringFuncs&Parsing\obj\Debug\Lab4StringFuncsAndParsing.frmJediForm.resources
 D:\Repos\SE245\Lab4StringFuncs&Parsing\obj\Debug\Lab4StringFuncsAndParsing.Properties.Resources.resources
 D:\Repos\SE245\Lab4StringFuncs&Parsing\obj\Debug\Lab4StringFuncsAndParsing.csproj.GenerateResource.Cache
+E:\Repositories\SE245\Lab4StringFuncs&Parsing\bin\Debug\Lab4StringFuncsAndParsing.exe.config
+E:\Repositories\SE245\Lab4StringFuncs&Parsing\obj\Debug\Lab4StringFuncsAndParsing.exe
+E:\Repositories\SE245\Lab4StringFuncs&Parsing\obj\Debug\Lab4StringFuncsAndParsing.pdb
