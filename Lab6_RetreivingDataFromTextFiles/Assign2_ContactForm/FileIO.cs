@@ -9,6 +9,9 @@ namespace Assign2_ContactForm
 {
     class FileIO
     {
+        //*******************************************************************************
+        // Creates and/or Opens Contacts CSV File and writes/appends data to end of file.
+        //*******************************************************************************
         public static string writeFile(string myFileName, string myString)
         {
             // Declare StreamWriter Object
@@ -48,9 +51,10 @@ namespace Assign2_ContactForm
             {
             }
 
-            // return feedback
+            // return Feedback
             return strFeedback;
         }
+        //*******************************************************************************
 
         //*******************************************************************************
         // Reads total file into string variable and returns it for use by driver program
@@ -86,6 +90,17 @@ namespace Assign2_ContactForm
                 return x;
             }
             return myFileString;   //Return the string for use by the driver program
+        }
+        //*******************************************************************************
+
+
+        //*******************************************************************************
+        // Reads and parses Contacts CSV File into array and displays each contact's info
+        // line-by-line, one record per row... 
+        //*******************************************************************************
+        public static double parseFile(string myFileName)
+        {
+
         }
         //*******************************************************************************
     }
