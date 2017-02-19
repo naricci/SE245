@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Assign2_ContactForm
 {
     public partial class frmContactForm : Form
     {
-        string salutation;
-        
+        // Variables
+        string salutation;          // String to hold Radio Button Value
+        string contactRecord;       // String to gather the contact's data
+
+
         public frmContactForm()
         {
             InitializeComponent();
@@ -49,7 +53,7 @@ namespace Assign2_ContactForm
         private void btnAdd_Click(object sender, EventArgs e)
         { 
             // Make sure the feedback/output labels is cleared from any previous attempts
-            lblFeedback.Text = "Feedback";
+            lblFeedback.Text = "";
             lblOutput.Text = "Contact";
 
             bool isValid = true;
@@ -162,7 +166,7 @@ namespace Assign2_ContactForm
             /************************* Open/Append Data to File *************************/
 
             // create a string to gather the data
-            string contactRecord;
+            // string contactRecord;
 
             // Start storing contact info
             contactRecord = DateTime.Now.ToShortDateString() + "," + txtFirstName.Text + "," + txtLastName.Text + "," + txtStreet1.Text + "," + txtStreet2.Text + "," + txtCity.Text + "," + cmbState.Text.ToString() + "," + txtZip.Text + "," + txtEmail.Text + "," + txtHomePhone.Text + "," + txtWorkPhone.Text + "," + txtCellPhone.Text + "," + dtpBirthday.Text.ToString() + "," + dtpAnniversary.Text.ToString() + "," + chkCardWorthy.Text.ToString() + "," + cmbRelationship.Text.ToString();
@@ -201,7 +205,7 @@ namespace Assign2_ContactForm
             }
 
             // Reset Feedback/Output Labels
-            lblFeedback.Text = "Feedback";
+            lblFeedback.Text = "";
             lblOutput.Text = "Contact";
 
             // Clear the Comboboxes
@@ -210,6 +214,9 @@ namespace Assign2_ContactForm
 
             // Clear all the items from the listbox
             lboxContacts.Items.Clear();
+
+            // Reset Variables
+            contactRecord = "";
         }
 
         private void btnReadWholeFile_Click(object sender, EventArgs e)
@@ -227,8 +234,15 @@ namespace Assign2_ContactForm
             }
             else // else...display in Listbox
             {
-                
+                // Step 1.) Read Func as-is/display entire file string to ListBox
+                // lboxContacts.Items.Add(contactRecord);
+
+                // Step 2.) Modify Read Func to loop through the file, reading one
+                //          line at a time, and copying each line to the ListBox
+                //          as seperate entries
+
             }
         }
+
     }
 }

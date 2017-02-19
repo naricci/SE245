@@ -17,8 +17,6 @@ namespace Assign2_ContactForm
             // Declare StreamWriter Object
             StreamWriter sw;
 
-            // string results = "OK";
-            
             // String for Feedback
             string strFeedback = "Record Added Successfully";
 
@@ -54,7 +52,7 @@ namespace Assign2_ContactForm
             // return Feedback
             return strFeedback;
         }
-        //*******************************************************************************
+        
 
         //*******************************************************************************
         // Reads total file into string variable and returns it for use by driver program
@@ -63,45 +61,118 @@ namespace Assign2_ContactForm
         //*******************************************************************************
         public static string readFile(string myFileName)
         {
-            //create string var to hold textfile contents
+            // Create string var to hold textfile contents
             string myFileString = "";
-            //Declare StreamReader object
+            // Declare StreamReader object
             StreamReader sr;
-            //Use error-trapping whenever accessing files or servers...
-            // they may not be accessible at some point!
+            // Use error-trapping whenever accessing files or servers...
+            // They may not be accessible at some point!
             try
             {
-                //Create object and set file and how file is to be handled
+                // Create object and set file and how file is to be handled
                 sr = new StreamReader(File.Open(@myFileName,
                     FileMode.Open));
                 try
                 {
-                    //Read file from top to bottom and store it in string var
+                    // Read file from top to bottom and store it in string var
                     myFileString = sr.ReadToEnd();
                 }
                 finally
                 {
-                    sr.Close(); //Close the text file with or without errors
+                    sr.Close(); // Close the text file with or without errors
                 }
             }
             catch (Exception exc)
             {
-                string x = "ERROR: " + exc.Message; //Store error msg 
+                string x = "ERROR: " + exc.Message; // Store error msg 
                 return x;
             }
-            return myFileString;   //Return the string for use by the driver program
+            return myFileString;   // Return the string for use by the driver program
         }
+
+
         //*******************************************************************************
+        // Reads total file into string variable and returns it for use by driver program
+        // Receives filename (including absolute address) as myFileName for 
+        //   dynamic file access
+        //*******************************************************************************
+        public static string readFileAlt(string myFileName)
+        {
+            // Create string var to hold textfile contents
+            string myFileString = "";
+            // Declare StreamReader object
+            StreamReader sr;
+            // Use error-trapping whenever accessing files or servers...
+            // They may not be accessible at some point!
+            try
+            {
+                // Create object and set file and how file is to be handled
+                sr = new StreamReader(File.Open(@myFileName,
+                    FileMode.Open));
+                try
+                {
+                    // Read file from top to bottom and store it in string var
+                    // myFileString = sr.ReadToEnd();
+
+                }
+                finally
+                {
+                    sr.Close(); // Close the text file with or without errors
+                }
+            }
+            catch (Exception exc)
+            {
+                string x = "ERROR: " + exc.Message; // Store error msg 
+                return x;
+            }
+            return myFileString;   // Return the string for use by the driver program
+        }
 
 
         //*******************************************************************************
         // Reads and parses Contacts CSV File into array and displays each contact's info
         // line-by-line, one record per row... 
         //*******************************************************************************
-        public static double parseFile(string myFileName)
+        public static double calcTotalPayout(string myFileName)
         {
+            double total = 0;
 
+            StreamReader sr;
+
+            try
+            {
+                // Open CSV File for Input
+                sr = new StreamReader(File.Open(@"Contacts.csv", FileMode.Open));
+
+                try
+                {
+                    // While the end of file is not reached...
+                    while (sr.Peek() != -1)
+                    {
+                        // Row containing the string from one line of the CSV file
+                        string row = sr.ReadLine();
+
+                        string[] columns = row.Split(',');
+
+                        total += double.Parse(columns[19]);
+                    }
+                }
+                finally
+                {
+                    // Close file with or without error
+                    sr.Close();
+                }
+            }
+            catch (Exception exc)
+            {
+                // Store the Error Message for later
+                string x = exc.Message;
+            }
+
+            // Return total (var)
+            return total;
         }
-        //*******************************************************************************
+        
+
     }
 }
