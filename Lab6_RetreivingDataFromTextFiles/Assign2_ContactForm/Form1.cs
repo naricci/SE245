@@ -85,13 +85,13 @@ namespace Assign2_ContactForm
                 lboxContacts.Items.Add(dtpBirthday.Value);
                 lboxContacts.Items.Add(dtpAnniversary.Value);
                 lboxContacts.Items.Add(chkCardWorthy.Text.ToString());
-                lboxContacts.Items.Add(cmbRelationship.SelectedItem.ToString());
+                lboxContacts.Items.Add(cmbRelationship.SelectedItem.ToString()); */
                 
 
                 DateTime dtBDay = new DateTime();
                 // dtBDay = Convert.ToDateTime(dtpBirthday.Text);
                 dtBDay = dtpBirthday.Value;
-                 */
+                
                 // lblFeedback.Text = dtBDay.ToShortDateString();
             }
 
@@ -234,15 +234,13 @@ namespace Assign2_ContactForm
             }
             else // else...display in Listbox
             {
-                // Step 1.) Read Func as-is/display entire file string to ListBox
-                // lboxContacts.Items.Add(contactRecord);
-
-                // Step 2.) Modify Read Func to loop through the file, reading one
-                //          line at a time, and copying each line to the ListBox
-                //          as seperate entries
-
+                lboxContacts.Items.Add(strData);
             }
         }
 
+        private void btnListContactInfo_Click(object sender, EventArgs e)
+        {
+            lboxContacts.Items.AddRange(FileIO.ListAllContacts(@"Payroll.csv").Items);
+        }
     }
 }

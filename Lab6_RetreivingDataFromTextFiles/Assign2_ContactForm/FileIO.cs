@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;  // Added to know what a listbox is...
 
 namespace Assign2_ContactForm
 {
@@ -51,13 +52,14 @@ namespace Assign2_ContactForm
 
             // return Feedback
             return strFeedback;
-        }
+        } 
+        //*******************************************************************************
         
 
         //*******************************************************************************
         // Reads total file into string variable and returns it for use by driver program
-        // Receives filename (including absolute address) as myFileName for 
-        //   dynamic file access
+        // Receives filename (including absolute address) as myFileName for dynamic file
+        // access.
         //*******************************************************************************
         public static string readFile(string myFileName)
         {
@@ -89,90 +91,68 @@ namespace Assign2_ContactForm
             }
             return myFileString;   // Return the string for use by the driver program
         }
+        //*******************************************************************************
 
 
         //*******************************************************************************
-        // Reads total file into string variable and returns it for use by driver program
-        // Receives filename (including absolute address) as myFileName for 
-        //   dynamic file access
+        // 
         //*******************************************************************************
-        public static string readFileAlt(string myFileName)
+        public static ListBox ListAllContacts(string myFileName)
         {
-            // Create string var to hold textfile contents
-            string myFileString = "";
-            // Declare StreamReader object
+            //Var to hold our pays (Create an instance of a ListBox in Memory)
+            ListBox LBTemp = new ListBox();
+
+            // Create our StreamReader object
             StreamReader sr;
-            // Use error-trapping whenever accessing files or servers...
-            // They may not be accessible at some point!
+
             try
             {
-                // Create object and set file and how file is to be handled
+                //Open the specified file for Input
                 sr = new StreamReader(File.Open(@myFileName,
                     FileMode.Open));
-                try
-                {
-                    // Read file from top to bottom and store it in string var
-                    // myFileString = sr.ReadToEnd();
-
-                }
-                finally
-                {
-                    sr.Close(); // Close the text file with or without errors
-                }
-            }
-            catch (Exception exc)
-            {
-                string x = "ERROR: " + exc.Message; // Store error msg 
-                return x;
-            }
-            return myFileString;   // Return the string for use by the driver program
-        }
-
-
-        //*******************************************************************************
-        // Reads and parses Contacts CSV File into array and displays each contact's info
-        // line-by-line, one record per row... 
-        //*******************************************************************************
-        public static double calcTotalPayout(string myFileName)
-        {
-            double total = 0;
-
-            StreamReader sr;
-
-            try
-            {
-                // Open CSV File for Input
-                sr = new StreamReader(File.Open(@"Contacts.csv", FileMode.Open));
 
                 try
                 {
-                    // While the end of file is not reached...
+                    //While the end of file is not reached
+                    //*****************************************
                     while (sr.Peek() != -1)
                     {
-                        // Row containing the string from one line of the CSV file
+                        //row contains the string from one line of the textfile
                         string row = sr.ReadLine();
 
+                        //Creates an array of strings called columns
+                        // then...Parses the string (split) by each comma (',')
+                        // and stores each parsed piece into the array (columns)
+                        //Therefore columns[0] should be the date, columns[1] should
+                        // be the first name, etc
                         string[] columns = row.Split(',');
 
-                        total += double.Parse(columns[19]);
+                        //Column [6] should be the paycheck amount
+                        // we convert that amount from a string to a double
+                        // then add to listbox
+                        string info = columns[1] + "," + columns[2] + "," + columns[7];
+                        // double.Parse(columns[14])
+                        LBTemp.Items.Add(info);
                     }
+                    //*****************************************
                 }
                 finally
                 {
-                    // Close file with or without error
+                    //Close the file with or without the error
                     sr.Close();
                 }
             }
             catch (Exception exc)
             {
-                // Store the Error Message for later
+                //store the error message...so far, we are doing nothing with it
                 string x = exc.Message;
             }
 
-            // Return total (var)
-            return total;
+            //Return the var (LBTemp), which should have the total payout for all the checks
+            return LBTemp;
         }
-        
+        //*******************************************************************************
+
 
     }
 }
