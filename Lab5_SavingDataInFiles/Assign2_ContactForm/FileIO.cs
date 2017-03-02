@@ -13,8 +13,6 @@ namespace Assign2_ContactForm
         {
             // Declare StreamWriter Object
             StreamWriter sw;
-
-            // string results = "OK";
             
             // String for Feedback
             string strFeedback = "Record Added Successfully";
