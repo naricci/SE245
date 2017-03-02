@@ -95,7 +95,7 @@ namespace Assign2_ContactForm
 
 
         //*******************************************************************************
-        // 
+        // Reads file/displays contact info line-by-line.
         //*******************************************************************************
         public static ListBox ListAllContacts(string myFileName)
         {
@@ -153,6 +153,53 @@ namespace Assign2_ContactForm
         }
         //*******************************************************************************
 
+
+        //*******************************************************************************
+        // Reads the Payroll file, line-by-line and gets data for each contact.
+        //*******************************************************************************
+        public static List<string> ListAllRecords(string myFileName)
+        {
+            //Var to hold our pays (Create an instance of a ListBox in Memory)
+            List<string> listTemp = new List<string>();
+
+            // Create our StreamReader object
+            StreamReader sr;
+
+            try
+            {
+                //Open the specified file for Input
+                sr = new StreamReader(File.Open(@myFileName,
+                    FileMode.Open));
+
+                try
+                {
+                    //While the end of file is not reached
+                    //*****************************************
+                    while (sr.Peek() != -1)
+                    {
+                        // row contains the string from one line of the textfile
+                        string row = sr.ReadLine();
+
+                        // Add record to the list
+                        listTemp.Add(row);
+                    }
+                    //*****************************************
+                }
+                finally
+                {
+                    //Close the file with or without the error
+                    sr.Close();
+                }
+            }
+            catch (Exception exc)
+            {
+                //store the error message...so far, we are doing nothing with it
+                string x = exc.Message;
+            }
+
+            //Return the var (listTemp), which should have the total payout for all the checks
+            return listTemp;
+        }
 
     }
 }

@@ -17,7 +17,6 @@ namespace Assign2_ContactForm
         string salutation;          // String to hold Radio Button Value
         string contactRecord;       // String to gather the contact's data
 
-
         public frmContactForm()
         {
             InitializeComponent();
@@ -85,14 +84,14 @@ namespace Assign2_ContactForm
                 lboxContacts.Items.Add(dtpBirthday.Value);
                 lboxContacts.Items.Add(dtpAnniversary.Value);
                 lboxContacts.Items.Add(chkCardWorthy.Text.ToString());
-                lboxContacts.Items.Add(cmbRelationship.SelectedItem.ToString()); */
+                lboxContacts.Items.Add(cmbRelationship.SelectedItem.ToString()); 
                 
 
                 DateTime dtBDay = new DateTime();
                 // dtBDay = Convert.ToDateTime(dtpBirthday.Text);
                 dtBDay = dtpBirthday.Value;
                 
-                // lblFeedback.Text = dtBDay.ToShortDateString();
+                // lblFeedback.Text = dtBDay.ToShortDateString*/
             }
 
             /**************************** FORM VALIDATION ********************************/
@@ -163,13 +162,13 @@ namespace Assign2_ContactForm
                 chkCardWorthy.Text = "Not Card Worthy";
             }
 
-            /************************* Open/Append Data to File *************************/
+            /****************************** Open/Append Data to File ******************************/
 
             // create a string to gather the data
             // string contactRecord;
 
             // Start storing contact info
-            contactRecord = DateTime.Now.ToShortDateString() + "," + txtFirstName.Text + "," + txtLastName.Text + "," + txtStreet1.Text + "," + txtStreet2.Text + "," + txtCity.Text + "," + cmbState.Text.ToString() + "," + txtZip.Text + "," + txtEmail.Text + "," + txtHomePhone.Text + "," + txtWorkPhone.Text + "," + txtCellPhone.Text + "," + dtpBirthday.Text.ToString() + "," + dtpAnniversary.Text.ToString() + "," + chkCardWorthy.Text.ToString() + "," + cmbRelationship.Text.ToString();
+            contactRecord = DateTime.Now.ToShortDateString() + "," + txtFirstName.Text + "," + txtLastName.Text + "," + txtStreet1.Text + "," + txtStreet2.Text + "," + txtCity.Text + "," + cmbState.Text.ToString() + "," + txtZip.Text + "," + txtEmail.Text + "," + txtHomePhone.Text + "," + txtWorkPhone.Text + "," + txtCellPhone.Text + "," + dtpBirthday.Value.ToShortDateString() + "," + dtpAnniversary.Value.ToShortDateString() + "," + chkCardWorthy.Text.ToString() + "," + cmbRelationship.Text.ToString();
 
             // Display Successful Storage Message
             lblOutput.Text = "Contact Stored Successfully";
@@ -240,7 +239,29 @@ namespace Assign2_ContactForm
 
         private void btnListContactInfo_Click(object sender, EventArgs e)
         {
-            lboxContacts.Items.AddRange(FileIO.ListAllContacts(@"Payroll.csv").Items);
+            // Method #1 (using ListAllContacts function and ListBox)
+            // lboxContacts.Items.AddRange(FileIO.ListAllContacts(@"Payroll.csv").Items);
+
+            // Method #2 (using ListAllRecords function and List)
+            // Store the list from the function in our own local list variable
+            List<string> myList = FileIO.ListAllRecords(@"Contacts.csv");
+
+            // Loop through list (AKA Dynamic Array) and post each item to the ListBox
+            foreach (string s in myList)
+            {
+                // Phase #1:  Output to ListBox
+                // lboxContacts.Items.Add(s);
+
+                // Phase #2:  Split up data
+                string[] columns = s.Split(',');
+
+                // Concatenate just for knowing we got individual data
+                string info = columns[1] + " " + columns[2] + " " + columns[8];
+                lboxContacts.Items.Add(info);
+
+                // Phase #3:  Try moving data to the form
+                // txtFirstName.Text = columns[1];
+            }
         }
     }
 }
