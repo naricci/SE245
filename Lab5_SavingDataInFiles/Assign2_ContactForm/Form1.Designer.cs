@@ -121,6 +121,7 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(164, 20);
             this.txtFirstName.TabIndex = 1;
+            this.txtFirstName.Text = "Nick";
             // 
             // txtLastName
             // 
@@ -128,6 +129,7 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(164, 20);
             this.txtLastName.TabIndex = 2;
+            this.txtLastName.Text = "Ricci";
             // 
             // txtStreet1
             // 
@@ -135,6 +137,7 @@
             this.txtStreet1.Name = "txtStreet1";
             this.txtStreet1.Size = new System.Drawing.Size(164, 20);
             this.txtStreet1.TabIndex = 3;
+            this.txtStreet1.Text = "261 bayview avenue";
             // 
             // txtStreet2
             // 
@@ -149,6 +152,7 @@
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(164, 20);
             this.txtCity.TabIndex = 5;
+            this.txtCity.Text = "Warwick";
             // 
             // lblSalutation
             // 
@@ -237,6 +241,7 @@
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(164, 20);
             this.txtZip.TabIndex = 7;
+            this.txtZip.Text = "02818";
             // 
             // lblEmail
             // 
@@ -253,6 +258,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(164, 20);
             this.txtEmail.TabIndex = 8;
+            this.txtEmail.Text = "nicholasaricci@gmail.com";
             // 
             // lblHomePhone
             // 
@@ -269,6 +275,7 @@
             this.txtHomePhone.Name = "txtHomePhone";
             this.txtHomePhone.Size = new System.Drawing.Size(164, 20);
             this.txtHomePhone.TabIndex = 9;
+            this.txtHomePhone.Text = "4018854548";
             // 
             // lblWorkPhone
             // 
@@ -294,6 +301,7 @@
             this.txtWorkPhone.Name = "txtWorkPhone";
             this.txtWorkPhone.Size = new System.Drawing.Size(164, 20);
             this.txtWorkPhone.TabIndex = 10;
+            this.txtWorkPhone.Text = "4018854548";
             // 
             // txtCellPhone
             // 
@@ -301,6 +309,7 @@
             this.txtCellPhone.Name = "txtCellPhone";
             this.txtCellPhone.Size = new System.Drawing.Size(164, 20);
             this.txtCellPhone.TabIndex = 11;
+            this.txtCellPhone.Text = "4018854548";
             // 
             // lblBirthday
             // 
@@ -384,7 +393,7 @@
             // txtOutput
             // 
             this.txtOutput.Location = new System.Drawing.Point(568, 50);
-            this.txtOutput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtOutput.Margin = new System.Windows.Forms.Padding(2);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -423,7 +432,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 519);
+            this.ClientSize = new System.Drawing.Size(842, 519);
             this.Controls.Add(this.txtFeedback);
             this.Controls.Add(this.lblFeedback);
             this.Controls.Add(this.lblOutput);
